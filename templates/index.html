@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Project</title>
+    <style>
+        .container {
+            display: flex;
+        }
+        .half {
+            flex: 1;
+        }
+        .camera {
+            max-width: 90%;
+            max-height: 90%;
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="half">
+            <h1>Sanctuary Space</h1>
+            <p>get ready to pose, {{ name }}</p>
+            <img class="camera" src="{{ url_for('views.video_feed') }}" />
+            <p><button id="generate">Generate Object</button></p>
+        </div>
+        <div class="half">
+            <canvas class="webgl"></canvas>
+            <script type="text/javascript" src="{{ url_for('static', filename='index.js')}}"></script>
+            <p>Waiting for 3D work...</p>
+        </div>
+    </div>
+</body>
+</html>
